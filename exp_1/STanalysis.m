@@ -7,9 +7,9 @@ L=length(frame);
 E=sum(frame.^2); %energy
 M=sum(abs(frame)); %average magenitude
 for i=2:L
-    a=sign(frame(i))-sign(frame(i-1));
-    Z=0.5*sum(abs(a)); %zero-corssing rate
+    a(i)=sign(frame(i))-sign(frame(i-1));
 end
+Z=0.5*sum(abs(a)); %zero-corssing rate
 disp('Short-time energy =');
 disp(E);
 disp('Short-time average magenitude =');
