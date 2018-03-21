@@ -23,7 +23,7 @@ data=data';
 N_20=frameSet(:,20);%get the 20th frame
 NT_20=timeAxis(20)*fs;%frame's beginning
 L=length(N_20);
-data_20=data(NT_20:NT_20+L-1);
+data_20=data(NT_20+1:NT_20+L);
 STanalysis(N_20);%short time analysis
 figure(2);
 plot((1:L),N_20);

@@ -7,10 +7,10 @@
 %The frames will save in frameSet[бн] by column.
 %Each frame's starting time will save in timeAxis.
 function [frameSet, timeAxis] = enframe(data, fs, timeperFrame, overlapRate, winF) 
-L=timeperFrame*fs;
+L=fix(timeperFrame*fs);
 interval=fix( L*(1-overlapRate) );
 frames=fix( length(data)/interval );
-data=[data,zeros(1,L*frames-length(data))];
+data=[data,zeros(1,L*frames-length(data))]; %make up zeros
 winfunc=str2func(winF);
 frameSet=zeros(L,frames);
 timeAxis=zeros(1,frames);
